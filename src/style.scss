@@ -1,0 +1,191 @@
+html {
+  scroll-behavior: smooth;
+}
+body {
+ background-color: #111010;
+}
+
+/* Ürünler Grid Stili */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 20px;
+  padding: 20px;
+  margin-top: 80px;
+}
+
+@media (min-width: 576px) {
+  .product-grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+@media (min-width: 768px) {
+  .product-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 992px) {
+  .product-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 1200px) {
+  .product-grid {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+
+/* Ürün Kartı Stili */
+.product-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 100%;
+  border: 1px solid #ddd;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  background-color: rgb(241, 132, 183);
+  border-radius: 25px;
+}
+
+.product-card img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 3000px;
+}
+
+.product-card-body {
+  padding: 15px;
+}
+
+/* Sepet Kartı Stili */
+.cart-card {
+  position: fixed;
+  top: 0;
+  right: 0;
+  margin-top: 70px;
+  width: 300px;
+  background-color: #f8f9fa;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.cart-title {
+  font-size: 1.5rem;
+}
+
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.cart-item-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.button-group {
+  display: flex;
+  align-items: center;
+}
+
+.quantity-display {
+  margin: 0 10px;
+}
+
+/* Bildirim Mesajı Stili */
+.notification {
+  position: fixed;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #28a745;
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+/* Navbar Stili */
+.navbar-brand {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-nav .nav-link {
+  margin-right: 15px;
+}
+
+.form-container {
+  display: flex;
+  align-items: center;
+}
+
+.divider {
+  height: 35px;
+  border-left: 1px solid #fff;
+}
+
+.social-icons {
+  display: flex;
+  align-items: center;
+}
+
+/* Sepet İkonu Stili */
+.cart-icon-container {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000; /* Sepetin diğer öğelerin üzerinde görünmesini sağlar */
+}
+
+.cart-icon {
+  color: #fff;
+  background-color: #000;
+  border-radius: 50%;
+  padding: 10px;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.fixed-cart {
+  position: fixed;
+  top: 100px; /* Navbarın altına yerleştirmek için */
+  right: 20px;
+  width: 300px;
+  background-color: #f8f9fa;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 1050; /* Navbarın üstünde görünmesi için z-index değeri */
+}
+
+
+.cart-toggle-button {
+  width: 100%;
+}
+/* Footer Stili */
+.footer {
+  background-color: #343a40;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}
+
+.footer-content p {
+  margin: 0;
+  padding: 5px;
+  font-size: 14px;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+}
