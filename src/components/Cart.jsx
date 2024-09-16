@@ -32,7 +32,7 @@ const Cart = ({ cartItems, onClearCart, onRemoveItem, onIncreaseQuantity, onDecr
               ))}
             </ul>
             <h3>Toplam: ${totalPrice.toFixed(2)}</h3>
-            <Button variant="danger" onClick={onClearCart}>Sepeti Boşalt</Button>
+            <Button variant="danger"  onClick={onClearCart}>Sepeti Boşalt</Button>
           </>
         )}
       </Card.Body>
