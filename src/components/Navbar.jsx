@@ -1,10 +1,20 @@
 import React from 'react';
 import { Navbar, Nav, Form, FormControl, Button } from 'react-bootstrap';
 import { FaSearch, FaFacebook, FaTwitter, FaInstagram, FaIceCream } from 'react-icons/fa';
+import "./video.scss";
+import videoFile from '../assets/video/sweety.mp4'; // Video import edildi
 
 const CustomNavbar = () => {
   return (
     <>
+      {/* Video Arka Planı */}
+      <div className="video-background">
+        <video autoPlay muted loop>
+          <source src={videoFile} type="video/mp4" />
+          
+        </video>
+      </div>
+
       <Navbar expand="lg" fixed="top" className="mb-5 bg-dark rounded-3">
         <Navbar.Brand href="#" className="ms-3 text-white">
           <FaIceCream size={40} /> {/* Tatlı simgesi */}
