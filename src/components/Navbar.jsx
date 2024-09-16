@@ -60,3 +60,4 @@ const CustomNavbar = () => {
 };
 
 export default CustomNavbar;
+
