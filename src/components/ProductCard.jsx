@@ -33,3 +33,5 @@ const ProductCard = ({ image, name, category, price, onAddToCart }) => {
 };
 
 export default ProductCard;
+
+
