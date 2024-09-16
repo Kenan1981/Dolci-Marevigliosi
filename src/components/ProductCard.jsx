@@ -21,12 +21,12 @@ const ProductCard = ({ image, name, category, price, onAddToCart }) => {
       <Card.Body>
         <Card.Title>{name}</Card.Title>
         <Card.Text>${price.toFixed(2)}</Card.Text>
-        <div className="quantity-controls d-flex justify-content-between">
-          <Button onClick={handleDecrease}>-</Button>
+        <div className="quantity-controls d-flex justify-content-evenly">
+          <Button className='bg-warning text-dark' onClick={handleDecrease}>-</Button>
           <span>{quantity}</span>
-          <Button onClick={handleIncrease}>+</Button>
+          <Button className='bg-warning text-dark' onClick={handleIncrease}>+</Button>
         </div>
-        <Button onClick={handleAddToCart} className="mt-2" variant="primary">Sepete Ekle</Button>
+        <Button onClick={handleAddToCart} className="mt-2" variant="warning">Sepete Ekle</Button>
       </Card.Body>
     </Card>
   );

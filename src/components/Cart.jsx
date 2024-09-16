@@ -22,9 +22,9 @@ const Cart = ({ cartItems, onClearCart, onRemoveItem, onIncreaseQuantity, onDecr
                     <span className='cart-item-name fs-5 d-block mb-3'>{item.name} - {item.quantity} adet - ${item.price * item.quantity}</span>
                     
                     <div className="button-group">
-                      <Button variant="secondary" onClick={() => onDecreaseQuantity(item)}>-</Button>
+                      <Button variant="danger" onClick={() => onDecreaseQuantity(item)}>-</Button>
                       <span className="quantity-display">{item.quantity}</span>
-                      <Button variant="secondary" onClick={() => onIncreaseQuantity(item)}>+</Button>
+                      <Button variant="danger" onClick={() => onIncreaseQuantity(item)}>+</Button>
                       <Button className='remove-button ms-3' variant="danger" onClick={() => onRemoveItem(item)}>Kaldır</Button>
                     </div>
                   </div>
