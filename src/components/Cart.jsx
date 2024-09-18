@@ -2,7 +2,7 @@ import React from 'react';
 import { Card, Button } from 'react-bootstrap';
 import { FaShoppingCart } from 'react-icons/fa'; // Alışveriş sepeti simgesi
 
-const Cart = ({ cartItems, onClearCart, onRemoveItem, onIncreaseQuantity, onDecreaseQuantity }) => {
+const Cart = ({ cartItems, onClearCart, onBuyCart, onRemoveItem, onIncreaseQuantity, onDecreaseQuantity }) => {
   const totalPrice = cartItems.reduce((total, item) => total + item.price * item.quantity, 0);
 
   return (
@@ -33,6 +33,7 @@ const Cart = ({ cartItems, onClearCart, onRemoveItem, onIncreaseQuantity, onDecr
             </ul>
             <h3>Toplam: ${totalPrice.toFixed(2)}</h3>
             <Button variant="danger"  onClick={onClearCart}>Sepeti Boşalt</Button>
+            <Button variant="success" className='ms-3'  onClick={onBuyCart}>Satin Al</Button>
           </>
         )}
       </Card.Body>
