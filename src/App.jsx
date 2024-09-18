@@ -2,7 +2,10 @@ import React, { useEffect, useState } from 'react';
 import ProductCard from './components/ProductCard';
 import Cart from './components/Cart';
 import CustomNavbar from './components/Navbar';
-import { FaShoppingCart } from 'react-icons/fa';
+import { FaShoppingCart, FaTimes } from 'react-icons/fa';
+import { MyCarousel } from './components/MyCarousel';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 const App = () => {
   const [products, setProducts] = useState([]);
@@ -38,6 +41,14 @@ const App = () => {
   const handleRemoveItem = (product) =>
     setCart((prevCart) => prevCart.filter((item) => item.name !== product.name));
 
+  const handleBuyCart = () => { 
+    if (cart.length > 0) {
+      setCart([]);
+      setNotification('Alisveris tamamlandı. Siparisiniz hazirlaniyor...');
+      setTimeout(() => setNotification(''), 5000);
+    } 
+   }
+
   const handleIncreaseQuantity = (product) =>
     setCart((prevCart) =>
       prevCart.map((item) =>
@@ -61,11 +72,18 @@ const App = () => {
   return (
     <div>
       <CustomNavbar />
+
+      <div>
+        <MyCarousel/>
+      </div>
+
       <div className="product-grid">
         {products.map((product, index) => (
           <ProductCard key={index} {...product} onAddToCart={handleAddToCart} />
         ))}
       </div>
+
+      
 
       <div className="cart-container">
         <div className="cart-icon-container">
@@ -81,12 +99,13 @@ const App = () => {
             <Cart
               cartItems={cart}
               onClearCart={handleClearCart}
+              onBuyCart={handleBuyCart}
               onRemoveItem={handleRemoveItem}
               onIncreaseQuantity={handleIncreaseQuantity}
               onDecreaseQuantity={handleDecreaseQuantity}
             />
-            <button onClick={handleToggleCartContent} className="btn btn-primary cart-toggle-button">
-              Sepeti Gizle
+            <button onClick={handleToggleCartContent} className="btn btn-warning cart-toggle-button ">
+              <FaTimes/>
             </button>
           </div>
         )}

@@ -44,7 +44,7 @@ body {
   flex-direction: column;
   align-items: center;
   width: 100%;
-  max-width: 100%;
+ // max-width: 100%;
   border: 1px solid #ddd;
   overflow: hidden;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -75,8 +75,13 @@ body {
   right: 0;
   margin-top: 70px;
   width: 300px;
-  background-color: #f8f9fa;
+  background-color: #eedbeb !important;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  overflow-y: scroll;
+  height: 65vh;
+  padding: 20px;
+  border-radius: 5px;
+  z-index: 1;
 }
 
 .cart-title {
@@ -168,8 +173,8 @@ body {
   top: 100px; /* Navbarın altına yerleştirmek için */
   right: 20px;
   width: 300px;
-  background-color: #f8f9fa;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  // background-color: #f8f9fa;
+  // box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   z-index: 1050; /* Navbarın üstünde görünmesi için z-index değeri */
 }
 
@@ -197,4 +202,12 @@ body {
 .footer-content {
   max-width: 1200px;
   margin: 0 auto;
+}
+
+.carousel {
+  height: 600px; /* Gözle görünür bir yükseklik */
+}
+.carousel-item img {
+  width: 100%; /* Genişliği tam ekran yapar */
+  height: auto; /* Görüntünün bozulmasını engeller */
 }
