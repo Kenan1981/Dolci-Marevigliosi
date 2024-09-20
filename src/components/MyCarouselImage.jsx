@@ -1,11 +1,37 @@
-import React from 'react'
+import React from "react";
 
 export const MyCarouselImage = () => {
   return (
     <img
       className="d-block w-100"
-      src="/image-tiramisu-tablet.jpg"
+      //src="https://picsum.photos/id/1/1920/1080"
+
+      src="../../public/image/image-waffle-mobile.jpg"
       alt="Carousel slide"
     />
-  )
-}
+  );
+};
+
+export const MyCarouselImage2 = () => {
+  return (
+    <img
+      className="d-block w-100"
+      //src="https://picsum.photos/id/1/1920/1080"
+
+      src="../../public/image/image-baklava-mobile.jpg"
+      alt="Carousel slide"
+    />
+  );
+};
+
+export const MyCarouselImage3 = () => {
+  return (
+    <img
+      className="d-block w-100"
+      //src="https://picsum.photos/id/1/1920/1080"
+
+      src="../../public/image/image-brownie-mobile.jpg"
+      alt="Carousel slide"
+    />
+  );
+};

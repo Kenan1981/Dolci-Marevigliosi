@@ -2,7 +2,39 @@ html {
   scroll-behavior: smooth;
 }
 body {
- background-color: #111010;
+  background-color: #111010;
+}
+
+.carousel {
+  height: 400px !important; /* Carousel yüksekliğini küçültüyoruz */
+  background-color: #111010;
+}
+
+.carousel-item img {
+  width: 50% !important; /* Genişliği tam ekran yapıyoruz */
+  //height: 50px !important; /* Yüksekliği sabitliyoruz */
+  object-fit: cover !important; /* Görüntünün orantılı şekilde sığmasını sağlıyoruz */
+}
+
+// Medya sorguları ile mobil uyumluluk için farklı yükseklikler belirleyebiliriz
+@media (max-width: 768px) {
+  .carousel {
+    height: 100px; /* Mobil cihazlar için daha küçük yükseklik */
+  }
+
+  .carousel-item img {
+    height: 80px !important; /* Mobil için resmin yüksekliğini de ayarlıyoruz */
+  }
+}
+
+@media (max-width: 576px) {
+  .carousel {
+    height: 25px; /* Daha küçük ekranlar için yükseklik */
+  }
+
+  .carousel-item img {
+    height: 25px; /* Resimlerin yüksekliğini bu ekrana göre ayarlıyoruz */
+  }
 }
 
 /* Ürünler Grid Stili */
@@ -44,7 +76,7 @@ body {
   flex-direction: column;
   align-items: center;
   width: 100%;
- // max-width: 100%;
+  // max-width: 100%;
   border: 1px solid #ddd;
   overflow: hidden;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -54,7 +86,6 @@ body {
   text-align: center;
   font-size: 2rem;
   color: #fff;
-  
 }
 
 .product-card img {
@@ -105,12 +136,10 @@ body {
 .button-group {
   display: flex;
   align-items: center;
-
 }
 
 .quantity-display {
   margin: 0 10px;
- 
 }
 
 /* Bildirim Mesajı Stili */
@@ -158,7 +187,6 @@ body {
   z-index: 1000; /* Sepetin diğer öğelerin üzerinde görünmesini sağlar */
 }
 
-
 .cart-icon {
   color: #fff;
   background-color: #000;
@@ -177,7 +205,6 @@ body {
   // box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   z-index: 1050; /* Navbarın üstünde görünmesi için z-index değeri */
 }
-
 
 .cart-toggle-button {
   width: 100%;
