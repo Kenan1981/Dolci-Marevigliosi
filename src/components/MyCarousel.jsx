@@ -1,30 +1,32 @@
 import React from 'react'
 import Carousel from 'react-bootstrap/Carousel';
-import { MyCarouselImage } from './MyCarouselImage';
+import { MyCarouselImage, MyCarouselImage2, MyCarouselImage3 } from './MyCarouselImage';
 
 export const MyCarousel = () => {
   return (
-    <Carousel>
+    <Carousel className="my-carousel">
       <Carousel.Item interval={1000}>
-        <MyCarouselImage text="First slide"  />
+        <MyCarouselImage text="First slide" />
         <Carousel.Caption>
-          <h3>First slide label</h3>
-          <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+          <h3>Waffle</h3>
+          <p>10 cesit meyve den olusan isvicre cikolatali</p>
         </Carousel.Caption>
       </Carousel.Item>
-      <Carousel.Item interval={500}>
-        <MyCarouselImage text="Second slide"  />
+      <Carousel.Item interval={1000}>
+        <MyCarouselImage2 text="Second slide"  />
         <Carousel.Caption>
-          <h3>Second slide label</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      
+          <h3>Baklava</h3>
+          <p>Antep Fistikli 9 Katli.</p>
         </Carousel.Caption>
       </Carousel.Item>
-      <Carousel.Item>
-        <MyCarouselImage text="Third slide"  />
+      
+      <Carousel.Item interval={1000}>
+        <MyCarouselImage3 text="Third slide"  />
         <Carousel.Caption>
-          <h3>Third slide label</h3>
+          <h3>Brownie</h3>
           <p>
-            Praesent commodo cursus magna, vel scelerisque nisl consectetur.
+            Taze findikli ve sicak cikolatali 
           </p>
         </Carousel.Caption>
       </Carousel.Item>
