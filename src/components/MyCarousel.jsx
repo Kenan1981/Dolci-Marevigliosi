@@ -4,15 +4,15 @@ import { MyCarouselImage, MyCarouselImage2, MyCarouselImage3 } from './MyCarouse
 
 export const MyCarousel = () => {
   return (
-    <Carousel className="my-carousel">
-      <Carousel.Item interval={1000}>
+    <Carousel className="my-carousel mb-5 ">
+      <Carousel.Item interval={2000}>
         <MyCarouselImage text="First slide" />
         <Carousel.Caption>
           <h3>Waffle</h3>
           <p>10 cesit meyve den olusan isvicre cikolatali</p>
         </Carousel.Caption>
       </Carousel.Item>
-      <Carousel.Item interval={1000}>
+      <Carousel.Item interval={2000}>
         <MyCarouselImage2 text="Second slide"  />
         <Carousel.Caption>
       
@@ -21,7 +21,7 @@ export const MyCarousel = () => {
         </Carousel.Caption>
       </Carousel.Item>
       
-      <Carousel.Item interval={1000}>
+      <Carousel.Item interval={2000}>
         <MyCarouselImage3 text="Third slide"  />
         <Carousel.Caption>
           <h3>Brownie</h3>

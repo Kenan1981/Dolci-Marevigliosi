@@ -41,7 +41,7 @@ const CustomNavbar = () => {
               </Button>
             </Form>
             <div className="divider" />
-            <div className="social-icons m-3">
+            <div className="social-icons m-3 d-flex">
               <a href="https://facebook.com" className="me-3">
                 <FaFacebook size={25} />
               </a>
