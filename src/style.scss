@@ -1,39 +1,42 @@
 html {
   scroll-behavior: smooth;
 }
+
 body {
   background-color: #111010;
 }
 
+/* Navbar Stili */
+
+
+/* Carousel Stili */
 .carousel {
-  height: 400px !important; /* Carousel yüksekliğini küçültüyoruz */
-  background-color: #111010;
+  height: 400px; /* Yüksekliği artırdım */
+  width: 100%;
+  margin-top: 100px; /* Navbarın hemen altında görünmesi için */
+  overflow: hidden; /* Taşmayı önlemek için */
+  .carousel-indicators {
+    display: none;
+  }
 }
 
 .carousel-item img {
-  width: 50% !important; /* Genişliği tam ekran yapıyoruz */
-  //height: 50px !important; /* Yüksekliği sabitliyoruz */
-  object-fit: cover !important; /* Görüntünün orantılı şekilde sığmasını sağlıyoruz */
+  width: 100%; /* Resmin genişliğini %100 yap */
+  height: auto; /* Yüksekliği otomatik ayarlamak için */
+  object-fit: scale-down; /* Resmin düzgün bir şekilde kesilmesini sağlar */
+  max-height: 400px; /* Slider yüksekliği ile sınırlama */
+
+
 }
 
-// Medya sorguları ile mobil uyumluluk için farklı yükseklikler belirleyebiliriz
-@media (max-width: 768px) {
+@media (min-width: 992px) {
   .carousel {
-    height: 100px; /* Mobil cihazlar için daha küçük yükseklik */
+    margin-top: 130px;
   }
-
   .carousel-item img {
-    height: 80px !important; /* Mobil için resmin yüksekliğini de ayarlıyoruz */
-  }
-}
-
-@media (max-width: 576px) {
-  .carousel {
-    height: 25px; /* Daha küçük ekranlar için yükseklik */
-  }
-
-  .carousel-item img {
-    height: 25px; /* Resimlerin yüksekliğini bu ekrana göre ayarlıyoruz */
+    width: auto; /* Genişlik yine %100 */
+    height: auto; /* Yüksekliği sabitle */
+    object-fit:scale-down /* Düzgün görünmesi için */
   }
 }
 
@@ -41,30 +44,24 @@ body {
 .product-grid {
   display: grid;
   grid-template-columns: repeat(1, 1fr);
-  gap: 80px;
+  gap: 20px;
   padding: 20px;
-  margin-top: 80px;
+  margin-top: 20px; /* Sliderın hemen altında görünmesi için */
 }
 
 @media (min-width: 576px) {
-  .product-grid {
-    grid-template-columns: repeat(1, 1fr);
-  }
-}
-
-@media (min-width: 768px) {
   .product-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
-@media (min-width: 992px) {
+@media (min-width: 768px) {
   .product-grid {
     grid-template-columns: repeat(3, 1fr);
   }
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 992px) {
   .product-grid {
     grid-template-columns: repeat(4, 1fr);
   }
@@ -72,74 +69,89 @@ body {
 
 /* Ürün Kartı Stili */
 .product-card {
-  display: flex;
+  display:flex;
   flex-direction: column;
   align-items: center;
   width: 100%;
-  // max-width: 100%;
   border: 1px solid #ddd;
   overflow: hidden;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   text-align: center;
   background-color: rgb(241, 132, 183);
   border-radius: 25px;
-  text-align: center;
-  font-size: 2rem;
+  font-size: 2rem; /* Font boyutunu düzelttim */
   color: #fff;
+ 
 }
 
 .product-card img {
   width: 90%;
   height: auto;
   object-fit: cover;
-  border-radius: 250px;
+  border-radius: 250px; /* Köşeleri biraz yuvarladım */
 }
 
 .product-card-body {
   padding: 15px;
 }
 
-/* Sepet Kartı Stili */
+/* Sepet İkonu Stili */
 .cart-card {
   position: fixed;
   top: 0;
   right: 0;
   margin-top: 70px;
   width: 300px;
-  background-color: #eedbeb !important;
+  background-color: #e0a7ba !important;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   overflow-y: scroll;
   height: 65vh;
-  padding: 20px;
-  border-radius: 5px;
+  padding: 0px;
+  border-radius: 10px;
   z-index: 1;
+
+  .cart-item {
+    display: flex;
+    align-items: center;
+    justify-content:flex-start;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #fff;
+    width: 100%;
+
+  }
+}
+.card-title {
+  font-size: 2rem; /* Font boyutunu düzelttim */
+  color: #fff;
 }
 
-.cart-title {
-  font-size: 1.5rem;
+.cart-icon-container {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000; /* Sepetin diğer öğelerin üzerinde görünmesini sağlar */
+ 
 }
 
-.cart-item {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 10px;
+.cart-icon {
+  color: #fff;
+  background-color: #000;
+  border-radius: 50%;
   padding: 10px;
-  border-bottom: 1px solid #ddd;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  
 }
 
-.cart-item-details {
-  display: flex;
-  flex-direction: column;
-}
-
-.button-group {
-  display: flex;
-  align-items: center;
-}
-
-.quantity-display {
-  margin: 0 10px;
+/* Sepet Kartı Stili */
+.fixed-cart {
+  position: fixed;
+  top: 70px; /* Navbarın altına yerleştirmek için */
+  right: 20px;
+  width: 300px;
+  z-index: 1050; /* Navbarın üstünde görünmesi için z-index değeri */
 }
 
 /* Bildirim Mesajı Stili */
@@ -154,69 +166,13 @@ body {
   border-radius: 5px;
 }
 
-/* Navbar Stili */
-.navbar-brand {
-  display: flex;
-  align-items: center;
-}
-
-.navbar-nav .nav-link {
-  margin-right: 15px;
-}
-
-.form-container {
-  display: flex;
-  align-items: center;
-}
-
-.divider {
-  height: 35px;
-  border-left: 1px solid #fff;
-}
-
-.social-icons {
-  display: flex;
-  align-items: center;
-}
-
-/* Sepet İkonu Stili */
-.cart-icon-container {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  z-index: 1000; /* Sepetin diğer öğelerin üzerinde görünmesini sağlar */
-}
-
-.cart-icon {
-  color: #fff;
-  background-color: #000;
-  border-radius: 50%;
-  padding: 10px;
-  cursor: pointer;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-.fixed-cart {
-  position: fixed;
-  top: 100px; /* Navbarın altına yerleştirmek için */
-  right: 20px;
-  width: 300px;
-  // background-color: #f8f9fa;
-  // box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  z-index: 1050; /* Navbarın üstünde görünmesi için z-index değeri */
-}
-
-.cart-toggle-button {
-  width: 100%;
-}
 /* Footer Stili */
 .footer {
   background-color: #343a40;
   color: white;
   text-align: center;
   padding: 20px;
-  position: relative;
-  bottom: 0;
+  margin-top: 100px;
   width: 100%;
 }
 
@@ -229,12 +185,4 @@ body {
 .footer-content {
   max-width: 1200px;
   margin: 0 auto;
-}
-
-.carousel {
-  height: 600px; /* Gözle görünür bir yükseklik */
-}
-.carousel-item img {
-  width: 100%; /* Genişliği tam ekran yapar */
-  height: auto; /* Görüntünün bozulmasını engeller */
 }
