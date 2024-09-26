@@ -28,7 +28,7 @@ const Cart = ({ cartItems, onClearCart, onBuyCart, onRemoveItem, onIncreaseQuant
                       <Button className='remove-button m-1' variant="danger" onClick={() => onRemoveItem(item)}>Kaldır</Button>
                     </div>
                   </div>
-                </li>
+                </li> 
               ))}
             </ul>
             <h3>Toplam: ${totalPrice.toFixed(2)}</h3>
