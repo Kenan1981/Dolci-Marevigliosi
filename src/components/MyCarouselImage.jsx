@@ -6,7 +6,7 @@ export const MyCarouselImage = () => {
       className="d-block w-100"
 
 
-      src="../../public/image/image-waffle-mobile.jpg"
+      src="/image/image-waffle-mobile.jpg"
       alt="Carousel slide"
     />
   );
@@ -18,7 +18,7 @@ export const MyCarouselImage2 = () => {
       className="d-block w-100"
       
 
-      src="../../public/image/image-baklava-mobile.jpg"
+      src="/image/image-baklava-mobile.jpg"
       alt="Carousel slide"
     />
   );
@@ -30,7 +30,7 @@ export const MyCarouselImage3 = () => {
       className="d-block w-100"
     
 
-      src="../../public/image/image-brownie-mobile.jpg"
+      src="/image/image-brownie-mobile.jpg"
       alt="Carousel slide"
     />
   );
