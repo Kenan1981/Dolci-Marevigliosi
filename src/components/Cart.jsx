@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, Button } from 'react-bootstrap';
+import { Card, Button, Container } from 'react-bootstrap';
 import { FaShoppingCart } from 'react-icons/fa'; // Alışveriş sepeti simgesi
 
 const Cart = ({ cartItems, onClearCart, onBuyCart, onRemoveItem, onIncreaseQuantity, onDecreaseQuantity }) => {
@@ -32,8 +32,13 @@ const Cart = ({ cartItems, onClearCart, onBuyCart, onRemoveItem, onIncreaseQuant
               ))}
             </ul>
             <h3>Toplam: ${totalPrice.toFixed(2)}</h3>
-            <Button variant="danger"  onClick={onClearCart}>Sepeti Boşalt</Button>
-            <Button variant="success" className='ms-3'  onClick={onBuyCart}>Satin Al</Button>
+            <Container className='d-flex justify-content-between align-items-center my-5 mx-2 gap-3 fixed-cart'>
+            <Button  variant="danger"  onClick={onClearCart}>Tümünü Kaldır</Button>
+            <Button  variant="success"  onClick={onBuyCart}>Satin Al</Button>
+            </Container>
+         
+          
+         
           </>
         )}
       </Card.Body>
