@@ -121,7 +121,7 @@ const App = () => {
       {notification && <div className="notification">{notification}</div>}
 
       {/* Footer */}
-      <footer className="footer rounded-5 me-3">
+      <footer className="footer me-3">
         <div className="footer-content">
           <p>İletişim: info@ornek.com | Telefon: +90 123 456 7890</p>
           <p>&copy; 2024 - Tüm Hakları Saklıdır.</p>
