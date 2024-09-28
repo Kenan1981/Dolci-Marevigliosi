@@ -7,7 +7,18 @@ body {
 }
 
 /* Navbar Stili */
-
+.navbar{
+  background-image: linear-gradient(to right, #e697ce, #f10b6b);
+  box-shadow: 0 4px 8px rgba(12, 11, 11, 0.4);
+  color: #fff;
+  padding: 10px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 999;
+  opacity: 0.5;
+  
+}
 
 /* Carousel Stili */
 .carousel {
@@ -25,18 +36,19 @@ body {
   height: auto; /* Yüksekliği otomatik ayarlamak için */
   object-fit: scale-down; /* Resmin düzgün bir şekilde kesilmesini sağlar */
   max-height: 400px; /* Slider yüksekliği ile sınırlama */
-
-
+  border-radius: 25px;
 }
 
 @media (min-width: 992px) {
   .carousel {
-    margin-top: 130px;
+    margin-top: 100px;
+    border-radius: 25px;
   }
   .carousel-item img {
-    width: auto; /* Genişlik yine %100 */
-    height: auto; /* Yüksekliği sabitle */
-    object-fit:scale-down /* Düzgün görünmesi için */
+    width: 100%;
+    height: 100%;  
+    object-fit:contain;
+    border-radius: 25px;
   }
 }
 
@@ -47,6 +59,7 @@ body {
   gap: 20px;
   padding: 20px;
   margin-top: 20px; /* Sliderın hemen altında görünmesi için */
+  
 }
 
 @media (min-width: 576px) {
@@ -57,7 +70,7 @@ body {
 
 @media (min-width: 768px) {
   .product-grid {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
@@ -72,7 +85,7 @@ body {
   display:flex;
   flex-direction: column;
   align-items: center;
-  width: 100%;
+  width: 300%;
   border: 1px solid #ddd;
   overflow: hidden;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -81,8 +94,26 @@ body {
   border-radius: 25px;
   font-size: 2rem; /* Font boyutunu düzelttim */
   color: #fff;
+  background-color: rgba(4, 219, 247, 0.5);
  
 }
+/* Yeni stil eklemeleri */
+.product-card-overlay {
+  position: fixed; /* Sayfanın tamamında görünmesi için */
+  top: 10;
+margin: 50px 10px 100px 10px;
+  bottom: 150px;
+ 
+  width: 300px;
+  height: 100px;
+  display: flex;
+  align-items: center; /* Dikey merkezleme */
+  justify-content: center; /* Yatay merkezleme */
+  background-color: rgba(0, 0, 0, 0.5); /* Karanlık bir arka plan */
+  z-index: 100; /* Üstte görünmesi için */
+}
+
+
 
 .product-card img {
   width: 90%;
@@ -125,6 +156,7 @@ body {
 .card-title {
   font-size: 2rem; /* Font boyutunu düzelttim */
   color: #fff;
+
 }
 
 .cart-icon-container {
