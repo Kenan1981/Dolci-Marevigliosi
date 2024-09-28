@@ -1,0 +1,36 @@
+/* ThumbnailCard.css */
+.thumbnail-wrapper {
+    position: relative; /* Relative konumlandırma */
+    display: inline-block; /* Kartların yan yana olabilmesi için */
+    overflow: visible; /* Hover sırasında taşmaların görünmesini sağla */
+}
+
+.thumbnail-card {
+    width: 150px;
+    height: 150px;
+    transition: transform 0.3s ease; /* Hover transition */
+    cursor: pointer; /* Kullanıcı fareyle tıklayabilir */
+    border-radius: 25px; /* Kare kenarları yuvarlanır */
+    margin: 10px; /* Üstteki ürünlerin altında boşluk bırakılması */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Üzerine gelince yatay ve düşeysel ışık efekti */
+    background-color: #f9f9f9; /* Ürünlerin arka plan rengi */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: relative; /* Kartın pozisyonunu ayarlamak için */
+    z-index: 0; /* Ürünlerin arka plan üstüne getirilmesini sağlamak için */
+}
+
+.thumbnail-card:hover {
+    transform: scale(1.2); /* Kartı büyütme */
+    z-index: 1; /* Kartın üstte görünmesi için */
+}
+
+.thumbnail-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+    border-radius: 25px;
+}

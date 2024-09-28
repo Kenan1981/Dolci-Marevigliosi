@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import ProductCard from "./components/ProductCard";
+import ThumbnailCard from "./components/ThumbnailCard"; // Yeni eklenen component
 import Cart from "./components/Cart";
 import CustomNavbar from "./components/Navbar";
 import { FaShoppingCart, FaTimes } from "react-icons/fa";
@@ -11,6 +12,7 @@ const App = () => {
   const [cart, setCart] = useState([]);
   const [showCartContent, setShowCartContent] = useState(false);
   const [notification, setNotification] = useState("");
+  const [hoveredProduct, setHoveredProduct] = useState(null); // Hoverlanan ürünü takip etmek için state
 
   useEffect(() => {
     fetch("/data1.json")
@@ -47,7 +49,7 @@ const App = () => {
   const handleBuyCart = () => {
     if (cart.length > 0) {
       setCart([]);
-      setNotification("Alisveris tamamlandı. Siparisiniz hazirlaniyor...");
+      setNotification("Alışveriş tamamlandı. Siparişiniz hazırlanıyor...");
       setTimeout(() => setNotification(""), 5000);
     }
   };
@@ -74,6 +76,14 @@ const App = () => {
     setShowCartContent((prevShowCartContent) => !prevShowCartContent);
   };
 
+  const handleMouseEnter = (product) => {
+    setHoveredProduct(product);
+  };
+
+  const handleMouseLeave = () => {
+    setHoveredProduct(null);
+  };
+
   return (
     <div>
       <div className="mb-5 g-5">
@@ -82,10 +92,25 @@ const App = () => {
       <div className="mt-5 g-5">
         <MyCarousel />
       </div>
-
       <div className="product-grid">
         {products.map((product, index) => (
-          <ProductCard key={index} {...product} onAddToCart={handleAddToCart} />
+          <div key={index} className="thumbnail-wrapper">
+            {hoveredProduct === product ? (
+              <div className="product-card-overlay" onMouseLeave={handleMouseLeave}>
+                <ProductCard
+                  {...product}
+                  onAddToCart={handleAddToCart}
+                />
+              </div>
+            ) : (
+              <ThumbnailCard
+                thumbnail={`image/${product.thumbnail}`} // Küçük resim
+                onHover={() => handleMouseEnter(product)} // Mouse üzerine geldiğinde
+                onMouseLeave={handleMouseLeave} // Fare karttan ayrıldığında
+                dataName={product.name} // data-name propunu ekleyin
+              />
+            )}
+          </div>
         ))}
       </div>
 

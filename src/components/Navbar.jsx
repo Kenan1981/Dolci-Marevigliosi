@@ -1,8 +1,9 @@
 import React from 'react';
 import { Navbar, Nav, Form, FormControl, Button } from 'react-bootstrap';
-import { FaSearch, FaFacebook, FaTwitter, FaInstagram, FaIceCream } from 'react-icons/fa';
+import { FaSearch, FaFacebook, FaTwitter, FaInstagram } from 'react-icons/fa';
 import "./video.scss";
 import videoFile from '../assets/video/sweety.mp4'; // Video import edildi
+import { FaCakeCandles } from 'react-icons/fa6';
 
 const CustomNavbar = () => {
   return (
@@ -15,10 +16,10 @@ const CustomNavbar = () => {
         </video>
       </div>
 
-      <Navbar expand="lg" fixed="top" className="mb-5 bg-dark rounded-3">
+      <Navbar expand="lg" fixed="top" className="mb-5 rounded-3">
         <Navbar.Brand href="#" className="ms-3 text-white">
-          <FaIceCream size={40} /> {/* Tatlı simgesi */}
-          <span className='ms-5 fs-3 text-white text-decoration-underline'> Dolci Marevigliosi</span>
+          <FaCakeCandles size={40} /> {/* Tatlı simgesi */}
+          <span className='ms-5 fs-3 text-white'>Dolcici Marevigliosi</span>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="offcanvasNavbar" className="me-3 bg-white" />
         <Navbar.Collapse id="offcanvasNavbar">
@@ -36,7 +37,7 @@ const CustomNavbar = () => {
                 className="m-3 flex-grow-1"
                 aria-label="Search"
               />
-              <Button variant="outline-success" className='m-3'>
+              <Button variant="light" className='m-3'>
                 <FaSearch />
               </Button>
             </Form>
