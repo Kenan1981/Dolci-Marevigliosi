@@ -1,5 +1,5 @@
 import React from 'react';
-import { Navbar, Nav, Form, FormControl, Button } from 'react-bootstrap';
+import { Navbar, Nav, Form, FormControl } from 'react-bootstrap';
 import { FaSearch, FaFacebook, FaTwitter, FaInstagram } from 'react-icons/fa';
 import "./video.scss";
 import videoFile from '../assets/video/sweety.mp4';
@@ -27,29 +27,25 @@ const CustomNavbar = ({ searchQuery, onSearchChange }) => {
             <Nav.Link className='text-white' href="#cart">Sepet</Nav.Link>
             <Nav.Link className='text-white' href="#contact">İletişim</Nav.Link>
           </Nav>
-          <div className="form-container d-flex justify-content-center align-items-center flex-grow-1">
-            <Form className="d-flex w-100">
+          <div className="form-container d-flex justify-content-start align-items-center flex-grow-1">
+            <Form className="d-flex w-75">
               <FormControl
                 type="search"
                 placeholder="Ara"
                 className="m-3 flex-grow-1"
                 aria-label="Search"
                 value={searchQuery}
-                onChange={onSearchChange} // Arama metnini güncelleyen fonksiyonu ekledik
+                onChange={onSearchChange}
               />
-              <Button variant="light" className='m-3'>
-                <FaSearch />
-              </Button>
             </Form>
-            <div className="divider" />
-            <div className="social-icons m-3 d-flex">
-              <a href="https://facebook.com" className="me-3">
+            <div className="social-icons ms-auto d-flex align-items-center">
+              <a href="https://facebook.com" className="me-3 text-white">
                 <FaFacebook size={25} />
               </a>
-              <a href="https://twitter.com" className="me-3">
+              <a href="https://twitter.com" className="me-3 text-white">
                 <FaTwitter size={25} />
               </a>
-              <a href="https://instagram.com">
+              <a href="https://instagram.com" className="text-white">
                 <FaInstagram size={25} />
               </a>
             </div>
