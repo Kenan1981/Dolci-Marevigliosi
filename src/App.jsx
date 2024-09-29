@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useCallback } from "react";
 import ProductCard from "./components/ProductCard";
-import ThumbnailCard from "./components/ThumbnailCard"; // Yeni eklenen component
+import ThumbnailCard from "./components/ThumbnailCard";
 import Cart from "./components/Cart";
 import CustomNavbar from "./components/Navbar";
 import { FaShoppingCart, FaTimes } from "react-icons/fa";
@@ -12,12 +12,17 @@ const App = () => {
   const [cart, setCart] = useState([]);
   const [showCartContent, setShowCartContent] = useState(false);
   const [notification, setNotification] = useState("");
-  const [hoveredProduct, setHoveredProduct] = useState(null); // Hoverlanan ürünü takip etmek için state
+  const [hoveredProduct, setHoveredProduct] = useState(null);
+  const [searchQuery, setSearchQuery] = useState("");
+  const [filteredProducts, setFilteredProducts] = useState([]);
 
   useEffect(() => {
     fetch("/data1.json")
       .then((response) => response.json())
-      .then((data) => setProducts(data));
+      .then((data) => {
+        setProducts(data);
+        setFilteredProducts(data);
+      });
   }, []);
 
   const handleAddToCart = (product) => {
@@ -37,7 +42,7 @@ const App = () => {
     });
 
     setNotification(`${product.name} sepete ${product.quantity} adet eklendi.`);
-    setTimeout(() => setNotification(""), 3000); // 3 saniye sonra bildirimi temizle
+    setTimeout(() => setNotification(""), 3000);
   };
 
   const handleClearCart = () => setCart([]);
@@ -84,16 +89,43 @@ const App = () => {
     setHoveredProduct(null);
   };
 
+  // Debouncing ile arama fonksiyonu
+  const debounce = (func, delay) => {
+    let timeoutId;
+    return (...args) => {
+      clearTimeout(timeoutId);
+      timeoutId = setTimeout(() => {
+        func(...args);
+      }, delay);
+    };
+  };
+
+  const handleSearch = useCallback(
+    debounce((query) => {
+      const lowerCaseQuery = query.toLowerCase();
+      const filtered = products.filter((product) =>
+        product.name.toLowerCase().includes(lowerCaseQuery)
+      );
+      setFilteredProducts(filtered);
+    }, 500),
+    [products]
+  );
+
+  const handleSearchChange = (event) => {
+    setSearchQuery(event.target.value);
+    handleSearch(event.target.value);
+  };
+
   return (
     <div>
       <div className="mb-5 g-5">
-        <CustomNavbar />
+        <CustomNavbar searchQuery={searchQuery} onSearchChange={handleSearchChange} />
       </div>
       <div className="mt-5 g-5">
         <MyCarousel />
       </div>
       <div className="product-grid">
-        {products.map((product, index) => (
+        {filteredProducts.map((product, index) => (
           <div key={index} className="thumbnail-wrapper">
             {hoveredProduct === product ? (
               <div className="product-card-overlay" onMouseLeave={handleMouseLeave}>
@@ -104,10 +136,10 @@ const App = () => {
               </div>
             ) : (
               <ThumbnailCard
-                thumbnail={`image/${product.thumbnail}`} // Küçük resim
-                onHover={() => handleMouseEnter(product)} // Mouse üzerine geldiğinde
-                onMouseLeave={handleMouseLeave} // Fare karttan ayrıldığında
-                dataName={product.name} // data-name propunu ekleyin
+                thumbnail={`image/${product.thumbnail}`}
+                onHover={() => handleMouseEnter(product)}
+                onMouseLeave={handleMouseLeave}
+                dataName={product.name}
               />
             )}
           </div>
@@ -145,7 +177,6 @@ const App = () => {
 
       {notification && <div className="notification">{notification}</div>}
 
-      {/* Footer */}
       <footer className="footer me-3">
         <div className="footer-content">
           <p>İletişim: info@ornek.com | Telefon: +90 123 456 7890</p>
