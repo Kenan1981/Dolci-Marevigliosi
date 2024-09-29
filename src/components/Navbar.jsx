@@ -2,23 +2,21 @@ import React from 'react';
 import { Navbar, Nav, Form, FormControl, Button } from 'react-bootstrap';
 import { FaSearch, FaFacebook, FaTwitter, FaInstagram } from 'react-icons/fa';
 import "./video.scss";
-import videoFile from '../assets/video/sweety.mp4'; // Video import edildi
+import videoFile from '../assets/video/sweety.mp4';
 import { FaCakeCandles } from 'react-icons/fa6';
 
-const CustomNavbar = () => {
+const CustomNavbar = ({ searchQuery, onSearchChange }) => {
   return (
     <>
-      {/* Video Arka Planı */}
       <div className="video-background">
         <video autoPlay muted loop>
           <source src={videoFile} type="video/mp4" />
-          
         </video>
       </div>
 
       <Navbar expand="lg" fixed="top" className="mb-5 rounded-3">
         <Navbar.Brand href="#" className="ms-3 text-white">
-          <FaCakeCandles size={40} /> {/* Tatlı simgesi */}
+          <FaCakeCandles size={40} />
           <span className='ms-5 fs-3 text-white'>Dolcici Marevigliosi</span>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="offcanvasNavbar" className="me-3 bg-white" />
@@ -36,6 +34,8 @@ const CustomNavbar = () => {
                 placeholder="Ara"
                 className="m-3 flex-grow-1"
                 aria-label="Search"
+                value={searchQuery}
+                onChange={onSearchChange} // Arama metnini güncelleyen fonksiyonu ekledik
               />
               <Button variant="light" className='m-3'>
                 <FaSearch />
@@ -61,4 +61,3 @@ const CustomNavbar = () => {
 };
 
 export default CustomNavbar;
-
