@@ -171,13 +171,11 @@ margin: 50px 10px 100px 10px;
 }
 
 .cart-icon {
-  color: #fff;
-  background-color: #000;
   border-radius: 50%;
   padding: 10px;
   cursor: pointer;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  
+  box-shadow: 0 4px 8px rgba(245, 243, 243, 0.2);
+  background-color: #fff;
 }
 
 /* Sepet Kartı Stili */
@@ -203,13 +201,22 @@ margin: 50px 10px 100px 10px;
 
 /* Footer Stili */
 .footer {
-  background-color: #343a40;
-  color: white;
+  background-image: linear-gradient(to right, #e697ce, #f10b6b);
+  box-shadow: 0 4px 8px rgba(12, 11, 11, 0.4);
+color: #fff;
+padding: 10px;
+width: 100%;
+z-index: 999;
+opacity: 0.5;
   text-align: center;
-  padding: 20px;
   margin-top: 100px;
-  width: 100%;
+  bottom: 0;
+  
 }
+
+
+
+
 
 .footer-content p {
   margin: 0;
