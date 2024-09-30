@@ -6,9 +6,9 @@ const Cart = ({ cartItems, onClearCart, onBuyCart, onRemoveItem, onIncreaseQuant
   const totalPrice = cartItems.reduce((total, item) => total + item.price * item.quantity, 0);
 
   return (
-    <Card className="cart-card fixed-cart mt-5 p-3 mb-5 text-center">
+    <Card className="cart-card fixed-cart mt-5 mb-5 ">
       <Card.Body>
-        <Card.Title className='cart-title'>
+        <Card.Title className='cart-title mt-3 text-center'>
           <FaShoppingCart size={24} /> Sepet
         </Card.Title>
         {cartItems.length === 0 ? (
@@ -17,15 +17,15 @@ const Cart = ({ cartItems, onClearCart, onBuyCart, onRemoveItem, onIncreaseQuant
           <>
             <ul>
               {cartItems.map((item, index) => (
-                <li key={index} className="cart-item">
+                <li key={index} className="cart-item ms-0 ">
                   <div className="cart-item-details">
-                    <span className='cart-item-name fs-5 d-block mb-3'>{item.name} - {item.quantity} adet - ${item.price * item.quantity}</span>
+                    <span className='cart-item-name fs-5 d-block mb-3'>{item.name} <br/> {item.quantity} adet - ${(item.price * item.quantity).toFixed(2)}</span>
                     
-                    <div className="button-group">
-                      <Button variant="danger" className='m-1' onClick={() => onDecreaseQuantity(item)}>-</Button>
+                    <div className="button-group ">
+                      <Button variant="warning" className='m-1' size='sm' onClick={() => onDecreaseQuantity(item)}>-</Button>
                       <span className="quantity-display">{item.quantity}</span>
-                      <Button variant="danger" className='m-1' onClick={() => onIncreaseQuantity(item)}>+</Button>
-                      <Button className='remove-button m-1' variant="danger" onClick={() => onRemoveItem(item)}>Kaldır</Button>
+                      <Button variant="warning" className='m-1' size='sm' onClick={() => onIncreaseQuantity(item)}>+</Button>
+                      <Button className='remove-button m-1' size='sm' variant="danger" onClick={() => onRemoveItem(item)}>Kaldır</Button>
                     </div>
                   </div>
                 </li> 

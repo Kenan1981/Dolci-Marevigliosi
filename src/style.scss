@@ -1,14 +1,14 @@
 html {
-  scroll-behavior: smooth;
+   scroll-behavior: smooth;
 }
 
 body {
-  background-color: #111010;
+  background-color: rgb(101, 85, 85);
 }
 
 /* Navbar Stili */
 .navbar{
-  background-image: linear-gradient(to right, #e697ce, #f10b6b);
+  background-image: linear-gradient(to bottom, #4db6d3, #d79eb6);
   box-shadow: 0 4px 8px rgba(12, 11, 11, 0.4);
   color: #fff;
   padding: 10px;
@@ -16,7 +16,7 @@ body {
   top: 0;
   width: 100%;
   z-index: 999;
-  opacity: 0.5;
+ 
   
 }
 
@@ -135,11 +135,11 @@ margin: 50px 10px 100px 10px;
   top: 0;
   right: 0;
   margin-top: 70px;
+  height: 67vh;
   width: 300px;
   background-color: #e0a7ba !important;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   overflow-y: scroll;
-  height: 65vh;
   padding: 0px;
   border-radius: 10px;
   z-index: 1;
@@ -149,7 +149,7 @@ margin: 50px 10px 100px 10px;
     align-items: center;
     justify-content:flex-start;
     margin: 10px;
-    padding: 10px;
+    padding: 5px;
     border-radius: 5px;
     background-color: #fff;
     width: 100%;
@@ -201,13 +201,13 @@ margin: 50px 10px 100px 10px;
 
 /* Footer Stili */
 .footer {
-  background-image: linear-gradient(to right, #e697ce, #f10b6b);
+  background-image: linear-gradient(to bottom, #d79eb6, #4db6d3);
   box-shadow: 0 4px 8px rgba(12, 11, 11, 0.4);
 color: #fff;
 padding: 10px;
 width: 100%;
 z-index: 999;
-opacity: 0.5;
+
   text-align: center;
   margin-top: 100px;
   bottom: 0;

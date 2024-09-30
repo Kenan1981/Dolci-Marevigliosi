@@ -17,7 +17,7 @@ const CustomNavbar = ({ searchQuery, onSearchChange }) => {
       <Navbar expand="lg" fixed="top" className="mb-5 rounded-3">
         <Navbar.Brand href="#" className="ms-3 text-white">
           <FaCakeCandles size={40} />
-          <span className='ms-5 fs-3 text-white'>Dolcici Marevigliosi</span>
+          <span className='ms-5 fs-3 text-white'>Dolci Marevigliosi</span>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="offcanvasNavbar" className="me-3 bg-white" />
         <Navbar.Collapse id="offcanvasNavbar">
