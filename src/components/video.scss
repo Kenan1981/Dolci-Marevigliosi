@@ -6,6 +6,7 @@
     height: 100%;
     z-index: -1; // Diğer içeriklerin videonun üstünde olması için
     overflow: hidden;
+    opacity: 0.8;
   
     video {
       width: 100%;
